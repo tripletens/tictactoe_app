@@ -42,6 +42,15 @@ const Game = () => {
         setxisnext(!xisnext);
     }
 
+    const isBoardFull = (squares) => {
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     const renderMoves = () => (
         <button style={btnstyle} onClick={()=> setboard(Array(9).fill(null))}>
            Restart Game
@@ -52,7 +61,7 @@ const Game = () => {
         <>
             <Board squares={board} onclick={handleClick} />
             <div style={styles}>
-                <p style={pstyle}>{winner && (winner !='draw') ? "Winner: " + winner : ( winner && winner === 'draw' ? "Draw" : "Next Player: " + ( xisnext ? 'X' : 'O') )}</p>
+                <p style={pstyle}>{winner ? "Winner: " + winner : ( isBoardFull(board) ? "Draw" : "Next Player: " + ( xisnext ? 'X' : 'O') )}</p>
                 {renderMoves()}
             </div>
         </>
