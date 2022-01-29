@@ -1,0 +1,22 @@
+
+body{
+  margin:0px;
+  padding:0px;
+  background:#2F4F4F;
+}
+.App {
+  text-align: center;
+}
+
+.header{
+  text-align:center;
+  background:black;
+  padding:30px;
+  color:#EEE888;
+  width:80%;
+  display:flex;
+  justify-content:center;
+  margin:0 auto;
+  margin-top:50px;
+  margin-bottom:50px;
+}
